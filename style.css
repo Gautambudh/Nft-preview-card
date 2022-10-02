@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: [Outfit];
+}
+main {
+    height: 100vh;
+    background-color:hsl(217, 54%, 11%);
+}
+.container {
+    position: relative;
+}
+
+/* ********** styling Card layout ********** */
+.card {
+    background-color: hsl(216, 50%, 16%);
+    width: 20rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    flex-direction: column;    
+}
+/* *********** styling NFT-image and hover effect of overlay ***************/
+.nft-img {
+    padding: 1rem 0;
+}
+.nft-img img {
+    border-radius: 0.5rem;
+}
+.overlay{
+    border-radius: 0.5rem;
+    height: 90%;
+    width: 92%;
+    opacity: 0;
+    transition: .5s ease;
+    background: #008CBA;
+}
+.container:hover .overlay {
+    opacity: 0.7;
+    cursor: grab;
+}
+/* ****************** positioning the overlay on image ******************* */
+.view, .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.view {
+    opacity: 1;
+}
+/* ************* styling Text in the Card ************* */
+.card-text {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+}
+h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+h2 {
+    margin: 0.2rem 0;
+    color: hsl(215, 51%, 70%);
+    font-size: 15px;
+    font-weight: 400;
+}
+/* ********** color cyan hover effect over (h1 & name) ************* */
+h1:hover, #name:hover {
+    color: cyan;
+    cursor: grab;
+}
+#avatar {
+    height: 2rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+hr {
+    margin: 0.5rem 0;
+    color: white;
+}
+.price {
+    justify-content: space-between;
+    color: cyan;
+}
+p {
+    align-items: center;
+    margin-bottom: 0rem;
+}
+#days {
+    align-items: center;
+    color: hsl(215, 51%, 70%);
+}
+#creation-of {
+    color: hsl(215, 51%, 70%);
+}
+#name {
+    color: white;
+}
+
+/* ************ Common code for every (display => flex) elements ****************** */
+.card , .card-text, .price, p, #days {
+    display: flex;
+}
+
+/* *************** media queries for width of card in smaller device ********* */
+@media screen and (max-width:375px) {
+    .card {
+        width: 16rem; 
+    }
+} 
